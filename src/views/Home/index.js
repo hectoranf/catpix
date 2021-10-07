@@ -7,12 +7,25 @@ export default function Home() {
 	const [catList, setCatList] = useState([])
 	const [errMsg, setErrMsg] = useState('')
 
-	useEffect(function () {
-		console.log('render!')
+	const loadMoreCats = () => {
+		getRandomCats()
+			.then((res) => setCatList([...catList, ...res.data]))
+			.catch((err) => setErrMsg('error loading cats'))
+	}
+
+	useEffect(() => {
 		getRandomCats()
 			.then((res) => setCatList(res.data))
 			.catch((err) => setErrMsg('error loading cats'))
 	}, [])
 
-	return <>{errMsg ? <p>{errMsg}</p> : <CatList cats={catList} />}</>
+	return (
+		<>
+			{errMsg ? (
+				<p>{errMsg}</p>
+			) : (
+				<CatList cats={catList} loadMoreCats={() => loadMoreCats()} />
+			)}
+		</>
+	)
 }
