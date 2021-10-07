@@ -13,7 +13,14 @@ export default function CardDetails(props) {
 				setDetails(res.data)
 			})
 			.catch((err) => console.log(err))
-	}, [])
+	}, [props.match.params.catId])
 
-	return <>{details && <Details details={details}></Details>}</>
+	return (
+		<>
+			<span className='BackButton' onClick={() => props.history.push('/')}>
+				{'<- Back'}
+			</span>
+			{details && <Details details={details}></Details>}
+		</>
+	)
 }

@@ -18,25 +18,25 @@ export default function CatList({ cats, loadMoreCats }) {
 		loader.current = loadMoreCats
 	}, [loadMoreCats])
 
-	const observerOptions = {
+	const iObserverOptions = {
 		threshold: 0.0,
 	}
-	const observer = useRef(
+	const iObserver = useRef(
 		new IntersectionObserver((entries) => {
 			if (entries[0].isIntersecting) {
 				loader.current()
 			}
-		}, observerOptions)
+		}, iObserverOptions)
 	)
 
 	const [lastCat, setLastCat] = useState(null)
 	useEffect(() => {
 		const currentCat = lastCat
-		const currentObserver = observer.current
+		const currentObserver = iObserver.current
 
 		//as first time the lastcat ref is null
-		if (currentCat) {
-			currentObserver.observe(currentCat)
+		if (lastCat) {
+			iObserver.current.observe(lastCat)
 		}
 
 		//cleanup

@@ -1,0 +1,6 @@
+.BackButton {
+	font-weight: 500;
+	position: fixed;
+	left: 30px;
+	cursor: pointer;
+}

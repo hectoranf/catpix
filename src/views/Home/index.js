@@ -19,6 +19,13 @@ export default function Home() {
 			.catch((err) => setErrMsg('error loading cats'))
 	}, [])
 
+	useEffect(() => {
+		//cleanup
+		return () => {
+			setCatList(null)
+		}
+	}, [setCatList])
+
 	return (
 		<>
 			{errMsg ? (
