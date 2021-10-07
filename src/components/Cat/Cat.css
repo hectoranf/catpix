@@ -9,12 +9,12 @@
 	cursor: pointer;
 }
 
-.CatPin:hover > img {
+.CatPin:hover img {
 	z-index: -1;
 	filter: grayscale(100%) blur(2px) contrast(200%);
 }
 
-.CatPin > img {
+.CatPin img {
 	width: 100%;
 	position: relative;
 	object-fit: contain;

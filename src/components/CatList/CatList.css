@@ -8,12 +8,13 @@
 	background-clip: padding-box;
 }
 
-.my-masonry-grid_column > article {
+.my-masonry-grid_column article {
 	margin-bottom: 40px;
 }
 
 .CatList {
 	margin: auto;
+	margin-top: 60px;
 	max-width: 500px;
 }
 
