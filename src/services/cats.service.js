@@ -1,10 +1,9 @@
 import axios from 'axios'
 
 const handler = axios.create({
-	baseURL: `https://restaurantlist-api.herokuapp.com/api/restaurants`,
-	withCredentials: true,
+	baseURL: `https://api.thecatapi.com/v1`,
 })
 
-export const getAllRestaurants = () => {
-	return handler.get('/')
+export const getRandomCats = () => {
+	return handler.get('/images/search?limit=20')
 }
