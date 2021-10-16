@@ -1,4 +1,13 @@
 .CatPin {
+	margin: 0;
+	padding: 0;
+}
+
+.CatPin img {
+	width: 100%;
+}
+
+.CatPin {
 	background: rgba(0, 0, 0, 0);
 	transition: ease 0.1s;
 	border-radius: 15px;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { getCatById } from '@services/cats.service.js'
 
-import Details from '@components/Cat/Details'
+import { Details } from '@components/Cat'
 
 export default function CardDetails(props) {
 	const [details, setDetails] = useState(null)

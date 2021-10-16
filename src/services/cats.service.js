@@ -5,7 +5,7 @@ const handler = axios.create({
 })
 
 export const getRandomCats = () => {
-	return handler.get('/images/search?limit=10')
+	return handler.get('/images/search?limit=100')
 }
 
 export const getCatById = (catId) => {
