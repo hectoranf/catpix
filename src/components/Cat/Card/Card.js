@@ -12,11 +12,12 @@ export default function Card({ order, cat, childRef }) {
 	}, [widthRef])
 
 	const [width, setWidth] = useState(null)
+	const scaledHeight = useRef(0)
 	useEffect(() => {
 		if (width) {
 			//Calculate number of rows
-			const scaledHeight = Math.floor((width * cat.height) / cat.width)
-			const numRows = Math.ceil(scaledHeight / rowHeight) + pinMarginRows
+			scaledHeight.current = Math.floor((width * cat.height) / cat.width)
+			const numRows = Math.floor(scaledHeight.current / rowHeight) + pinMarginRows
 			setRows(numRows)
 		}
 	}, [width, cat.height, cat.width])
@@ -24,10 +25,22 @@ export default function Card({ order, cat, childRef }) {
 	const [rows, setRows] = useState(null)
 
 	return (
-		<Link ref={childRef} style={{ gridRowEnd: `span ${rows}` }} to={`/cat/${cat.id}`}>
-			<article ref={widthRef} className='CatPin'>
+		<Link
+			ref={childRef}
+			style={{ gridRowEnd: `span ${rows}` }}
+			to={`/cat/${cat.id}`}
+			className='link'>
+			<article
+				ref={widthRef}
+				style={{ height: `${scaledHeight.current}px` }}
+				className='CatPin'>
+				<div className='pinOverlay'>
+					<span className='saveButton'>Save</span>
+					<img alt='options' src='./dots.png' className='footerButton options' />
+					<img alt='uploading' src='./upload.png' className='footerButton upload' />
+				</div>
 				{/* <p>{order}</p> */}
-				<img alt={cat.id} src={cat.url} className='blur' />
+				<img alt={cat.id} src={cat.url} className='blur catImage' />
 			</article>
 		</Link>
 	)

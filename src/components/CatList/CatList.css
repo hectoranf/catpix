@@ -1,8 +1,47 @@
 .CatList {
-	width: 91%;
+	max-width: 365px;
 	margin: 0 auto;
 	padding: 0;
 	display: grid;
-	grid-template-columns: repeat(7, 1fr);
+	grid-template-columns: 1fr;
 	grid-column-gap: 15px;
+}
+
+@media (min-width: 505px) {
+	.CatList {
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 495px;
+	}
+}
+
+@media (min-width: 755px) {
+	.CatList {
+		grid-template-columns: repeat(3, 1fr);
+		max-width: 745px;
+	}
+}
+
+@media (min-width: 1010px) {
+	.CatList {
+		grid-template-columns: repeat(4, 1fr);
+		max-width: 1000px;
+	}
+}
+@media (min-width: 1260px) {
+	.CatList {
+		grid-template-columns: repeat(5, 1fr);
+		max-width: 1250px;
+	}
+}
+@media (min-width: 1510px) {
+	.CatList {
+		grid-template-columns: repeat(6, 1fr);
+		max-width: 1500px;
+	}
+}
+@media (min-width: 1770px) {
+	.CatList {
+		grid-template-columns: repeat(7, 1fr);
+		max-width: 1760px;
+	}
 }

@@ -1,29 +1,18 @@
 .CatPin {
 	margin: 0;
 	padding: 0;
-}
-
-.CatPin img {
 	width: 100%;
-}
-
-.CatPin {
 	background: rgba(0, 0, 0, 0);
 	transition: ease 0.1s;
 	border-radius: 15px;
+	position: relative;
 }
 
 .CatPin:hover {
-	background: rgba(0, 0, 0, 0.4);
-	cursor: pointer;
+	cursor: zoom-in;
 }
 
-.CatPin:hover img {
-	z-index: -1;
-	filter: grayscale(100%) blur(2px) contrast(200%);
-}
-
-.CatPin img {
+.catImage {
 	width: 100%;
 	position: relative;
 	object-fit: contain;
@@ -42,4 +31,61 @@
 	to {
 		filter: blur(0px);
 	}
+}
+
+.link {
+	text-decoration: none;
+}
+
+.pinOverlay {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	border-radius: 15px;
+	opacity: 0;
+}
+
+.pinOverlay:hover {
+	opacity: 1;
+}
+
+.saveButton {
+	height: 20px;
+	width: 50px;
+	padding: 10px;
+	border-radius: 20px;
+	color: white;
+	font-weight: 700;
+	text-align: center;
+	background-color: #e60023;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.saveButton:hover {
+	cursor: pointer;
+	background-color: #ad081b;
+}
+
+.footerButton {
+	width: 25px;
+	position: absolute;
+	bottom: 10px;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 50%;
+}
+
+.footerButton:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+	cursor: pointer;
+}
+
+.options {
+	right: 10px;
+}
+
+.upload {
+	right: 55px;
 }

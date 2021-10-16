@@ -1,15 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './CatList.css'
 import { Card } from '../Cat'
 import { rowHeight } from '@utils/Constants'
+import { getRandomCats } from '../../services/cats.service'
 
 export default function CatList({ cats, getMoreCats }) {
 	//
 	//
+	const catLoader = useRef(getMoreCats)
+	useEffect(() => {
+		catLoader.current = getMoreCats
+	}, [getMoreCats])
+
 	const observer = new IntersectionObserver(
 		(entries) => {
 			if (entries[0].isIntersecting) {
-				// getMoreCats()
+				catLoader.current()
 			}
 		},
 		{ threshold: 0.0 }
@@ -17,19 +23,15 @@ export default function CatList({ cats, getMoreCats }) {
 
 	const [lastCat, setLastCat] = useState(null)
 	useEffect(() => {
-		// const currentCat = lastCat
-		// const currentObserver = observer.current
-
 		if (lastCat) {
 			observer.observe(lastCat)
 		}
 
-		// //cleanup
-		// return () => {
-		// 	if (observer.current) {
-		// 		observer.current.unobserve(lastCat)
-		// 	}
-		// }
+		return function cleanup() {
+			if (lastCat) {
+				observer.unobserve(lastCat)
+			}
+		}
 	}, [lastCat])
 
 	return (
