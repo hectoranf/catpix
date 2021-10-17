@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import './CatList.css'
 import { Card } from '../Cat'
 import { rowHeight } from '@utils/Constants'
-import { getRandomCats } from '../../services/cats.service'
 
 export default function CatList({ cats, getMoreCats }) {
 	//
@@ -36,13 +35,14 @@ export default function CatList({ cats, getMoreCats }) {
 
 	return (
 		<section style={{ gridAutoRows: `minmax(${rowHeight}px, auto)` }} className='CatList'>
-			{cats.map((elm, idx) => {
-				return idx < cats.length - 1 ? (
-					<Card key={idx} order={idx} cat={elm} />
-				) : (
-					<Card key={idx} order={idx} cat={elm} childRef={setLastCat} />
-				)
-			})}
+			{cats &&
+				cats.map((elm, idx) => {
+					return idx < cats.length - 1 ? (
+						<Card key={idx} order={idx} cat={elm} />
+					) : (
+						<Card key={idx} order={idx} cat={elm} childRef={setLastCat} />
+					)
+				})}
 		</section>
 	)
 }

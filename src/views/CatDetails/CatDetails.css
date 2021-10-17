@@ -1,0 +1,69 @@
+.details {
+	cursor: zoom-out;
+	padding: 20px 0;
+}
+
+.BackButton {
+	font-weight: 500;
+	position: fixed;
+	left: 30px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	z-index: 500;
+}
+
+.BackButton img {
+	width: 15px;
+	margin-right: 10px;
+	padding: 15px;
+	border-radius: 50%;
+	display: none;
+}
+
+.BackButton img:hover {
+	background-color: rgb(226, 226, 226);
+}
+
+.BackButton p {
+	font-size: 1.2em;
+	font-weight: 700;
+	display: none;
+}
+
+h2 {
+	text-align: center;
+}
+
+@media (min-width: 500px) and (max-width: 1010px) {
+	.BackButton img {
+		display: inline-block;
+	}
+}
+
+@media (min-width: 1200px) {
+	.BackButton img {
+		display: inline-block;
+	}
+}
+
+@media (min-width: 700px) and (max-width: 1010px) {
+	.BackButton p {
+		display: inline-block;
+	}
+}
+
+@media (min-width: 1350px) {
+	.BackButton p {
+		display: inline-block;
+	}
+}
+
+.scrolled img {
+	background-color: white;
+}
+
+.scrolled p {
+	display: none;
+}

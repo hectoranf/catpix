@@ -1,19 +1,88 @@
 .CatDetails {
 	width: 50%;
-	margin: auto;
+	min-width: 300px;
+	margin: 0 auto 10px auto;
 	display: flex;
-	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+	flex-direction: column;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 	border-radius: 30px;
-	padding: 20px 0px;
+	background-color: white;
+	cursor: initial;
 }
 
 .CatImage {
-	width: 50%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.CatImage img {
+	width: 100%;
+	border-radius: 30px 30px 0px 0px;
+	z-index: -2;
+	object-fit: contain;
+	vertical-align: top;
 }
 
 .CatInfo {
-	width: 50%;
-	padding: 0px 10px;
+	width: 90%;
+	padding: 20px;
+	padding-top: 10px;
+
+	position: relative;
+}
+
+.CatInfo > .header {
+	position: sticky;
+	width: 100%;
+	top: 50px;
+	background-color: white;
+	height: 50px;
+	padding-top: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.CatInfo > .header > span {
+	background-color: #e60023;
+	color: white;
+	height: 20px;
+	width: 50px;
+	padding: 10px;
+	border-radius: 20px;
+	text-align: center;
+	font-weight: 700;
+}
+.CatInfo > .header > span:hover {
+	cursor: pointer;
+	background-color: #ad081b;
+}
+
+.headerButton {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.headerButton > span {
+	width: 25px;
+	height: 25px;
+	padding: 5px;
+	margin-right: 3px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.headerButton > span:hover {
+	background-color: rgb(226, 226, 226);
+	cursor: pointer;
+}
+
+.headerButton img {
+	width: 100%;
 }
 
 .CatInfo a {
@@ -21,7 +90,12 @@
 	color: inherit;
 }
 
-.CatImage img {
-	width: 100%;
-	border-radius: 15px;
+@media (min-width: 1010px) {
+	.CatDetails {
+		min-width: 1000px;
+		flex-direction: row;
+	}
+	.CatImage img {
+		border-radius: 30px 0px 0px 30px;
+	}
 }

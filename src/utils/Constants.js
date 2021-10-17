@@ -1,4 +1,4 @@
-const rowHeight = 10
+const rowHeight = 20
 const marginBottomSeparation = 40
 const pinMarginRows = Math.ceil(marginBottomSeparation / rowHeight)
 

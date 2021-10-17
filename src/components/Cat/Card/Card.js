@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Card.css'
+
 import { rowHeight, pinMarginRows } from '@utils/Constants'
 
 export default function Card({ order, cat, childRef }) {
@@ -36,8 +37,18 @@ export default function Card({ order, cat, childRef }) {
 				className='CatPin'>
 				<div className='pinOverlay'>
 					<span className='saveButton'>Save</span>
-					<img alt='options' src='./dots.png' className='footerButton options' />
-					<img alt='uploading' src='./upload.png' className='footerButton upload' />
+					<span className='footerButton options'>
+						<img
+							alt='options'
+							src='https://res.cloudinary.com/hector/image/upload/v1634479336/catpix/dots_ceghue.png'
+						/>
+					</span>
+					<span className='footerButton upload'>
+						<img
+							alt='uploading'
+							src='https://res.cloudinary.com/hector/image/upload/v1634479336/catpix/upload_fol2ou.png'
+						/>
+					</span>
 				</div>
 				{/* <p>{order}</p> */}
 				<img alt={cat.id} src={cat.url} className='blur catImage' />
