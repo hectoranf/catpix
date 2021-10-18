@@ -40,9 +40,7 @@ export default function Home({ filter }) {
 		resetCats()
 	}, [filter])
 
-	useEffect(() => {
-		console.log(catList.length)
-	}, [catList])
+	useEffect(() => {}, [catList])
 
 	// useEffect(() => {
 	// 	return function cleanup() {

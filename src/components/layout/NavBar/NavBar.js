@@ -19,7 +19,6 @@ export default function NavBar({ setFilter }) {
 	useEffect(() => {
 		setFilter(breed)
 		history.push('/')
-		// setBreed('')
 	}, [breed])
 
 	const [navBarShadow, setnavBarShaow] = useState('')
@@ -34,9 +33,12 @@ export default function NavBar({ setFilter }) {
 	return (
 		<nav className={navBarShadow}>
 			<Link to='/' className='logo'>
-				<h1>Catpix</h1>
+				<img
+					src='https://res.cloudinary.com/hector/image/upload/v1634516500/catpix/favicon_tqtdbg.ico'
+					alt='logo'
+				/>
 			</Link>
-			<form>
+			<form className='filter'>
 				<select value={breed} onChange={handleBreed}>
 					<option value={''}>Filter by breed</option>
 					{breedList.map((elm) => (
@@ -46,6 +48,12 @@ export default function NavBar({ setFilter }) {
 					))}
 				</select>
 			</form>
+			<span className='profile'>
+				<img
+					src='https://res.cloudinary.com/hector/image/upload/v1634517824/catpix/profilePic_tj1tnx.jpg'
+					alt='profile pic'
+				/>
+			</span>
 		</nav>
 	)
 }
